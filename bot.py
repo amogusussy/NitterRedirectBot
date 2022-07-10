@@ -12,10 +12,7 @@ instances = ["https://nitter.net/","https://nitter.42l.fr/","https://nitter.puss
 
 print(instances.len())
 
-for submissions in subreddit.hot(limit=50):
-    print("********")
-    print(submission.title)
-
+for submissions in subreddit.hot(limit=100):
     for comment in submission.comments:
         if hasattr(comment,"body"):
             comment_lower = comment.body.lower()
@@ -25,5 +22,4 @@ for submissions in subreddit.hot(limit=50):
                 coment.reply(f"""Twitter.com  links require you to create an account to view anything other than the main tweet body and a few replies. Use nitter instead, it allows you to view tweets without an account, and without twitter spyware.
                     Here's the same link, but with nitter instead. {link.replace("twitter.com/", instances[randrange(0,len(instances))])}
                     ***
-                    This is a bot, if the instances aren't working, refer to https://github.com/xnaas/nitter-instances and contact user Username8457. Source code is '
-                    """)
+                    This is a bot, if the instances aren't working, refer to https://github.com/xnaas/nitter-instances and contact user Username8457. Source code is [here]{https://github.com/amogusussy/NitterRedirectBot}""")
